@@ -9,4 +9,24 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Assets\Images\background.png" />
+    <None Remove="Assets\Images\demo.png" />
+    <None Remove="Assets\Images\title.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Images\background.png" />
+    <Resource Include="Assets\Images\demo.png" />
+    <Resource Include="Assets\Images\title.png" />
+  </ItemGroup>
+
 </Project>

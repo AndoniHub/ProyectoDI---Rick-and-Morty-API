@@ -1,0 +1,85 @@
+﻿<Window x:Class="ProyectoDI___Rick_and_Morty_API.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProyectoDI___Rick_and_Morty_API"
+        mc:Ignorable="d"
+        Title="Proyecto DI - Rick and Morty API" Height="450" Width="800">
+    <Grid>
+        <!-- Definición de columnas -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Fondo del grid principal -->
+        <Grid.Background>
+            <ImageBrush ImageSource="pack://application:,,,/Assets/Images/background.png" Stretch="UniformToFill"/>
+        </Grid.Background>
+
+        <!-- Imagen + Info (columna 1) -->
+        <StackPanel Grid.Column="0" HorizontalAlignment="Center">
+
+            <!-- Imagen -->
+            <Image x:Name="ImagenPersonaje"
+                   Source="pack://application:,,,/Assets/Images/demo.png"
+                   Stretch="Uniform"
+                   Margin="10, 10, 5, 5"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center" />
+
+            <!-- Campos informativos -->
+            <Border Margin="10, 5, 5, 0" Style="{StaticResource TarjetaBorder}">
+                <StackPanel>
+                    <TextBlock Text="ID:" Style="{StaticResource TitleText}"/>
+                    <TextBlock x:Name="CampoID" Margin="0,0,0,10"/>
+
+                    <TextBlock Text="Nombre:"
+                               Style="{StaticResource TitleText}"/>
+                    <TextBlock x:Name="CampoNombre"
+                               Style="{StaticResource NormalText}"
+                               Margin="0,0,0,10"/>
+
+                    <TextBlock Text="Género:"
+                               Style="{StaticResource TitleText}"/>
+                    <TextBlock x:Name="CampoGenero"
+                               Style="{StaticResource NormalText}"
+                               Margin="0,0,0,10"/>
+
+                    <TextBlock Text="Especie:"
+                               Style="{StaticResource TitleText}"/>
+                    <TextBlock x:Name="CampoEspecie"
+                               Style="{StaticResource NormalText}"
+                               Margin="0,0,0,10"/>
+
+                    <TextBlock Text="Origen:"
+                               Style="{StaticResource TitleText}"/>
+                    <TextBlock x:Name="CampoOrigen"
+                               Style="{StaticResource NormalText}"/>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+
+        <!-- Contenedor para la imagen de título y el ListBox (columna 2) -->
+        <StackPanel Grid.Column="1">
+
+            <!-- Imagen título -->
+            <Image Source="pack://application:,,,/Assets/Images/title.png"
+                   Stretch="Uniform"
+                   HorizontalAlignment="Stretch"
+                   Height="Auto"
+                   Margin="5"/>
+
+            <!-- ListBox envuelto en un Border par darle el estilo de tarjeta -->
+            <Border Style="{StaticResource TarjetaBorder}">
+                <!-- Lista de personajes -->
+                <ListBox x:Name="PersonajesListBox" Style="{StaticResource EstiloListBox}"
+                     DisplayMemberPath="name"
+                     SelectionChanged="SelectPersonaje"
+                     Height="Auto"/>
+            </Border>
+
+        </StackPanel>
+    </Grid>
+</Window>
