@@ -4,8 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoDI___Rick_and_Morty_API"
+        xmlns:viewmodels="clr-namespace:ProyectoDI___Rick_and_Morty_API.ViewModels"
+        d:DataContext="{d:DesignInstance Type=viewmodels:MainViewModel}"
         mc:Ignorable="d"
-        Title="Proyecto DI - Rick and Morty API" Height="450" Width="800">
+        Title="Proyecto DI - Rick and Morty API" Height="665" Width="800">
     <Grid>
         <!-- Definición de columnas -->
         <Grid.ColumnDefinitions>
@@ -22,8 +24,11 @@
         <StackPanel Grid.Column="0" HorizontalAlignment="Center">
 
             <!-- Imagen -->
+            <!-- Source="pack://application:,,,/Assets/Images/demo.png" -->
             <Image x:Name="ImagenPersonaje"
-                   Source="pack://application:,,,/Assets/Images/demo.png"
+                   Source="{Binding ImagenSeleccionada}"
+                   Width="400"
+                   Height="400"
                    Stretch="Uniform"
                    Margin="10, 10, 5, 5"
                    VerticalAlignment="Center"
@@ -33,29 +38,29 @@
             <Border Margin="10, 5, 5, 0" Style="{StaticResource TarjetaBorder}">
                 <StackPanel>
                     <TextBlock Text="ID:" Style="{StaticResource TitleText}"/>
-                    <TextBlock x:Name="CampoID" Margin="0,0,0,10"/>
+                    <TextBlock Text="{Binding PersonajeSeleccionado.id}" Margin="0,0,0,10"/>
 
                     <TextBlock Text="Nombre:"
                                Style="{StaticResource TitleText}"/>
-                    <TextBlock x:Name="CampoNombre"
+                    <TextBlock Text="{Binding PersonajeSeleccionado.name}"
                                Style="{StaticResource NormalText}"
                                Margin="0,0,0,10"/>
 
                     <TextBlock Text="Género:"
                                Style="{StaticResource TitleText}"/>
-                    <TextBlock x:Name="CampoGenero"
+                    <TextBlock Text="{Binding PersonajeSeleccionado.gender}"
                                Style="{StaticResource NormalText}"
                                Margin="0,0,0,10"/>
 
                     <TextBlock Text="Especie:"
                                Style="{StaticResource TitleText}"/>
-                    <TextBlock x:Name="CampoEspecie"
+                    <TextBlock Text="{Binding PersonajeSeleccionado.species}"
                                Style="{StaticResource NormalText}"
                                Margin="0,0,0,10"/>
 
                     <TextBlock Text="Origen:"
                                Style="{StaticResource TitleText}"/>
-                    <TextBlock x:Name="CampoOrigen"
+                    <TextBlock Text="{Binding PersonajeSeleccionado.origin.name, TargetNullValue='Desconocido'}"
                                Style="{StaticResource NormalText}"/>
                 </StackPanel>
             </Border>
@@ -74,10 +79,10 @@
             <!-- ListBox envuelto en un Border par darle el estilo de tarjeta -->
             <Border Style="{StaticResource TarjetaBorder}">
                 <!-- Lista de personajes -->
-                <ListBox x:Name="PersonajesListBox" Style="{StaticResource EstiloListBox}"
-                     DisplayMemberPath="name"
-                     SelectionChanged="SelectPersonaje"
-                     Height="Auto"/>
+                <ListBox ItemsSource="{Binding Personajes}"
+                         SelectedItem="{Binding PersonajeSeleccionado, Mode=TwoWay}"
+                         DisplayMemberPath="name"
+                         Style="{StaticResource EstiloListBox}"/>
             </Border>
 
         </StackPanel>
