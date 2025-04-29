@@ -10,6 +10,15 @@
         <Setter Property="FontStyle" Value="Normal"/>
     </Style>
 
+    <!-- Estilo para el control TextBlock [ Texto de título ]-->
+    <Style x:Key="TitleText2" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Comic Sans MS"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="Foreground" Value="{StaticResource BrushTextoPrimario}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="FontStyle" Value="Normal"/>
+    </Style>
+
     <!-- Estilo para el control TextBlock [ Texto normal ]-->
     <Style x:Key="NormalText" TargetType="TextBlock">
         <Setter Property="FontFamily" Value="Comic Sans MS"/>

@@ -3,7 +3,7 @@
 
     <!-- Estilo para el control Border -->
     <Style x:Key="TarjetaBorder" TargetType="Border">
-        <Setter Property="Background" Value="{StaticResource BrushFondoSemiTransparente}"/>
+        <Setter Property="Background" Value="{StaticResource BrushFondoSemiTransparente88}"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="CornerRadius" Value="12"/>

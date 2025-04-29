@@ -8,13 +8,18 @@
     <!-- Colores para textos -->
     <Color x:Key="ColorTextoPrimario">#FF333333</Color>
 
-    <!-- Colores de fondo -->
-    <Color x:Key="FondoSemiTransparente">#A0FFFFFF</Color>
+    <!-- Colores de fondo transparentes en % -->
+    <Color x:Key="FondoSemiTransparente37">#A0FFFFFF</Color>
+    <Color x:Key="FondoSemiTransparente75">#C0FFFFFF</Color>
+    <Color x:Key="FondoSemiTransparente88">#E0FFFFFF</Color>
+    
 
     <!-- SolidColorBrush : Para los controles que esperan un Brush y no un Color -->
     <SolidColorBrush x:Key="BrushPrimario" Color="#66BB6A" />
     <SolidColorBrush x:Key="BrushSecundario" Color="#9BD11B" />
     <SolidColorBrush x:Key="BrushTextoPrimario" Color="{StaticResource ColorTextoPrimario}" />
-    <SolidColorBrush x:Key="BrushFondoSemiTransparente" Color="{StaticResource FondoSemiTransparente}" />
+    <SolidColorBrush x:Key="BrushFondoSemiTransparente37" Color="{StaticResource FondoSemiTransparente37}" />
+    <SolidColorBrush x:Key="BrushFondoSemiTransparente75" Color="{StaticResource FondoSemiTransparente75}" />
+    <SolidColorBrush x:Key="BrushFondoSemiTransparente88" Color="{StaticResource FondoSemiTransparente88}" />
 
 </ResourceDictionary>

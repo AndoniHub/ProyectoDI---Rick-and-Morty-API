@@ -10,7 +10,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Assets\Images\background.png" />
+    <None Remove="Assets\Images\background3.jpg" />
+    <None Remove="Assets\Images\background6.png" />
     <None Remove="Assets\Images\demo.png" />
     <None Remove="Assets\Images\title.png" />
   </ItemGroup>
@@ -20,7 +21,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Assets\Images\background.png" />
+    <Resource Include="Assets\Images\background3.jpg" />
+    <Resource Include="Assets\Images\background6.png" />
     <Resource Include="Assets\Images\demo.png" />
     <Resource Include="Assets\Images\title.png" />
   </ItemGroup>
